@@ -3,7 +3,7 @@ FROM alpine:3.22 AS tmp
 RUN --mount=type=cache,target=/var/cache/apk \
     apk add curl unzip
 
-ENV VERSION=8.1.31
+ENV VERSION=10.0.1
 RUN curl -sSL https://github.com/lensesio/stream-reactor/releases/download/${VERSION}/kafka-connect-aws-s3-${VERSION}.zip -o /tmp/kafka-connect-aws-s3.zip
 RUN unzip -d /tmp /tmp/kafka-connect-aws-s3.zip
 RUN mkdir -p /opt/lib
